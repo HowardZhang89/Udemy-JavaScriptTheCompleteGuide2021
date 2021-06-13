@@ -32,6 +32,7 @@ function writeToLog(event, val, monsterHealth, playerHealth) {
     finalMonsterHealth: monsterHealth,
     finalPlayerHealth: playerHealth,
   };
+  // could also use Switch Statement here
   if (event === LOG_EVENT_PLAYER_ATTACK) {
     logEntry.target = "MONSTER"; // if the property doesn't exist yet, JS will create it for us
   } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
@@ -104,6 +105,8 @@ function endRound() {
 function attackMonster(mode) {
   let maxDamage;
   let logEvent;
+  // could also use Ternary Operator here:
+  // maxDamage = MODE_ATTACK ? ATTACK_VALUE : STONG_ATTACK_VALUE
   if (mode === MODE_ATTACK) {
     maxDamage = ATTACK_VALUE;
     logEvent = LOG_EVENT_PLAYER_ATTACK;

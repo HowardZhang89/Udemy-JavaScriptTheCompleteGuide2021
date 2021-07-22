@@ -1,17 +1,22 @@
-const h1 = document.getElementById('main-title');
+const ul = document.body.firstElementChild.nextElementSibling
+const firstLi = ul.firstElementChild;
 
-h1.textContent = 'Some new title!';
-h1.style.color = 'white';
-h1.style.backgroundColor = 'black';
+console.log(firstLi);
 
-const li = document.querySelector('li:last-of-type');
-li.textContent = li.textContent + ' (Changed!)';
+const section = document.querySelector('section');
+const button = document.querySelector('button');
 
-const body = document.body;
+//section.style.backgroundColor = 'blue';
+section.className = 'red-bg';
 
-//const listItemElements = documents.querySelectorAll('li'); // modern way
-const listItemElements = document.getElementsByTagName('li'); // old way
-
-for(const listItemEl of listItemElements) {
-  console.dir(listItemEl);
-}
+button.addEventListener('click',() => {
+  // if (section.className === 'red-bg visible'){
+  //   section.className = 'red-bg invisible';
+  // }else{
+  //   section.className = 'red-bg visible';
+  // }
+  
+  // We can use classList.toggle to replace the above code.
+  //section.classList.toggle('visible');  // can ignore this since invisible is the only part that makes a difference.
+  section.classList.toggle('invisible');
+});
